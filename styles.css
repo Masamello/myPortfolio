@@ -4,8 +4,8 @@
 }
 
 body {
-    padding: 0;
-    margin: 0;
+    padding: 0 !important;
+    margin: 0 !important;
     scroll-behavior: smooth;
 }
 
@@ -13,7 +13,8 @@ a {
     text-decoration: none;
 }
 
-ul {
+ul,li,a {
+    text-decoration: none;
     list-style: none;
     padding: 0;
     margin: 0;
