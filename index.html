@@ -17,11 +17,88 @@
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        />
     </head>
     <body>
-        <header id="header"></header>
-        <main id="main"></main>
-        <footer id="footer"></footer>
+        <!-- Header section -->
+        <header id="headerContainer" class="headerContainer m-2">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">myPortfolio</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#resume">Resume</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#portfolio"
+                                    >Portfolio</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main id="mainContainer" class="mainContainer">
+            <section id="home" class="homeSection"></section>
+            <section id="about" class="aboutSection"></section>
+            <section id="resume" class="resumeSection"></section>
+            <section id="portfolio" class="portfolioSection"></section>
+            <section id="contact" class="contactSection"></section>
+        </main>
+        <footer id="footerContainer" class="footerContainer">
+            <h3>myPortfolio</h3>
+            <div class="socialMedia">
+                <div>Follow me on</div>
+                <a href="https://x.com/MasamelloIsHere"
+                    ><i class="fa-brands fa-twitter"></i
+                ></a>
+                <a href="https://www.instagram.com/masahiro_kojima/"
+                    ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a href="https://github.com/Masamello"
+                    ><i class="fa-brands fa-github"></i
+                ></a>
+            </div>
+            <div class="navBarFooter">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </footer>
+        <!-- Bootstrap JavaScript Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+            crossorigin="anonymous"
+        ></script>
     </body>
 </html>
