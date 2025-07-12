@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>myPortfolio</title>
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -97,7 +98,7 @@
             <section id="home" class="homeSection">
                 <div class="homeContent card text-bg-dark" style="border: none">
                     <img
-                        src="/assets/photos/CollageImage_2 (1).jpg"
+                        src="{% static 'assets/photos/CollageImage_2 (1).jpg' %}"
                         class="card-img"
                         alt="Collage Image"
                     />
@@ -124,14 +125,18 @@
                         class="aboutText d-flex flex-column justify-content-center align-items-center conatiner p-5"
                     >
                         <h1>About <span class="text-warning">Me</span></h1>
-                        <p>
-                            I'm a third-year mechanical engineering student
-                            currently on a study leave for international
-                            education. My passion lies in automotive
-                            engineering, and I'm dedicated to expanding my
-                            knowledge in both <span class="text-warning">mechanical</span> and <span class="text-warning">web development</span>
-                            fields!
-                        </p>
+                        {% if about_me %}
+                            <p>{{ about_me.description|linebreaks }}</p>
+                        {% else %}
+                            <p>
+                                I'm a third-year mechanical engineering student
+                                currently on a study leave for international
+                                education. My passion lies in automotive
+                                engineering, and I'm dedicated to expanding my
+                                knowledge in both <span class="text-warning">mechanical</span> and <span class="text-warning">web development</span>
+                                fields!
+                            </p>
+                        {% endif %}
                         <div id="moretext" class="d-none moreText">
                             <p>
                                 Studied at <a href="https://tamwood.com/study-work/">Tamwood Career College</a>,
@@ -171,7 +176,43 @@
                                 I've worked on a variety of projects, including:
                             </p>
                             <ul id="mySkillsItems" class="d-flex flex-wrap justify-content-center">
-                                
+                                {% for skill in skills %}
+                                    <li class="skillItem" {% if skill.github_url %}onclick="window.open('{{ skill.github_url }}', '_blank')"{% endif %}>
+                                        <img src="{% static 'assets/Icons/'|add:skill.icon_file %}" alt="{{ skill.name }}" title="{{ skill.name }}">
+                                    </li>
+                                {% empty %}
+                                    <!-- Default skills if no data in database -->
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/htmlIcon.svg' %}" alt="HTML" title="HTML">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/cssIcon.svg' %}" alt="CSS" title="CSS">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/JavaScriptIcon.svg' %}" alt="JavaScript" title="JavaScript">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/pythonIcon.svg' %}" alt="Python" title="Python">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/djangoIcon.svg' %}" alt="Django" title="Django">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/phpIcon (2).svg' %}" alt="PHP" title="PHP">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/mysqlIcon.svg' %}" alt="MySQL" title="MySQL">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/gitIcon.svg' %}" alt="Git" title="Git">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/vuejsIcon.svg' %}" alt="Vue.js" title="Vue.js">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/reactIcon.svg' %}" alt="React" title="React">
+                                    </li>
+                                {% endfor %}
                             </ul>
                             <p class="text-center mb-4">
                                 Click each skills to see my projects on my GitHub!
@@ -187,19 +228,54 @@
                     >
                         <h1>My <span class="text-warning">Education</span></h1>
                     </div>
-                    <div class="myEducationList d-flex flex-row justify-content-around align-items-center container">
-                        <div class="leftPart d-flex flex-column justify-content-center align-items-center text-center">
-                            <h2>Nihon University, Tokyo</h2>
-                            <p class="text-muted">Apr,2022 - Aug,2024</p>
-                        </div>
-                        <div class="centerPart d-flex flex-column justify-content-center align-items-center text-center">
-                            <h2>Tamwood Career College</h2>
-                            <p>Web Development</p>
-                        </div>
-                        <div class="rightPart d-flex flex-column justify-content-center align-items-center text-center">
-                            <h2>Tamwood Career College</h2>
-                            <p>Web Development</p>
-                        </div>
+                    <div class="myEducationList d-flex flex-column justify-content-around align-items-center container">
+                        {% for education in educations %}
+                            <div class="row text-center">
+                                <div class="col d-flex flex-column justify-content-center align-items-center">
+                                    <h2>{{ education.school_name }}</h2>
+                                    <p class="text-muted">{{ education.period }}</p>
+                                </div>
+                                <div class="col d-flex flex-column justify-content-center align-items-center">
+                                    {% if forloop.counter0 == 0 %}
+                                        <img src="{% static 'assets/Frames/yellowBall.svg' %}" class="yellowBall"/>
+                                    {% else %}
+                                        <img src="{% static 'assets/Frames/blackBall.svg' %}" class="blackBall"/>
+                                    {% endif %}
+                                </div>
+                                <div class="col d-flex flex-column justify-content-center align-items-center">
+                                    <h2>{{ education.degree }}</h2>
+                                    <p class="text-muted">{{ education.description }}</p>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <!-- Default education if no data in database -->
+                            <div class="row text-center">
+                                <div class="col d-flex flex-column justify-content-center align-items-center">
+                                    <h2>Nihon University, Tokyo</h2>
+                                    <p class="text-muted">Apr,2022 - Aug,2024</p>
+                                </div>
+                                <div class="col d-flex flex-column justify-content-center align-items-center">
+                                    <img src="{% static 'assets/Frames/yellowBall.svg' %}" class="yellowBall"/>
+                                </div>
+                                <div class="col d-flex flex-column justify-content-center align-items-center">
+                                    <h2>Mechanical Engineering</h2>
+                                    <p class="text-muted">Mainly studying about physics such as fluid mechanics, heat transfer etc.</p>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col d-flex flex-column justify-content-center align-items-center">
+                                    <h2>Ilac International College</h2>
+                                    <p class="text-muted">Aug,2024 - Dec,2024</p>
+                                </div>
+                                <div class="col d-flex flex-column justify-content-center align-items-center">
+                                    <img src="{% static 'assets/Frames/blackBall.svg' %}" class="blackBall"/>
+                                </div>
+                                <div class="col d-flex flex-column justify-content-center align-items-center">
+                                    <h2>English Language</h2>
+                                    <p class="text-muted">Studied English to improve my communication skills.</p>
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </section>
@@ -237,5 +313,5 @@
             crossorigin="anonymous"
         ></script>
     </body>
-    <script src="script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </html>
