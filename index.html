@@ -21,14 +21,15 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         />
-        
     </head>
     <body>
         <!-- Header section -->
         <header id="headerContainer" class="headerContainer m-2">
-            <nav class="navbar navbar-expand-lg navbar-light">
+            <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between align-items-center">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">my<span class="text-warning">Portfolio</span></a>
+                    <a class="navbar-brand" href="#"
+                        >my<span class="text-warning">Portfolio</span></a
+                    >
                     <button
                         class="navbar-toggler"
                         type="button"
@@ -58,6 +59,34 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                            <li class="nav-item d-flex justify-content-start align-items-start">
+                                <div class="checkbox-wrapper-35">
+                                    <input
+                                        value="private"
+                                        name="switch"
+                                        id="switch"
+                                        type="checkbox"
+                                        class="switch"
+                                    />
+                                    <label for="switch">
+                                        <span class="switch-x-text"></span>
+                                        <span class="switch-x-toggletext">
+                                            <span class="switch-x-unchecked"
+                                                ><span
+                                                    class="switch-x-hiddenlabel"
+                                                    >Unchecked: </span
+                                                >EN</span
+                                            >
+                                            <span class="switch-x-checked"
+                                                ><span
+                                                    class="switch-x-hiddenlabel"
+                                                    >Checked: </span
+                                                >JA</span
+                                            >
+                                        </span>
+                                    </label>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -105,60 +134,105 @@
                         </p>
                         <div id="moretext" class="d-none moreText">
                             <p>
-                                Currently studying at Tamwood Career College, I'm
-                                pursuing web development while working part-time. My
-                                curriculum covers both frontend and backend
-                                development, including <strong>HTML, CSS, PHP (MySQL),
-                                    JavaScript (React, Vue.js), and Python (Django).</strong>
+                                Currently studying at Tamwood Career College,
+                                I'm pursuing web development while working
+                                part-time. My curriculum covers both frontend
+                                and backend development, including
+                                <strong
+                                    >HTML, CSS, PHP (MySQL), JavaScript (React,
+                                    Vue.js), and Python (Django).</strong
+                                >
                                 Through hands-on projects, I'm building a strong
                                 foundation in full-stack development.
                             </p>
                             <p>
-                                My goal is to work in the automotive industry, and I
-                                believe the technical skills, problem-solving
-                                abilities, and international experience I'm gaining
-                                will be invaluable for my future career. When I'm
-                                not coding, I enjoy listening to Western music and
-                                photography, particularly capturing nature with my
+                                My goal is to work in the automotive industry,
+                                and I believe the technical skills,
+                                problem-solving abilities, and international
+                                experience I'm gaining will be invaluable for my
+                                future career. When I'm not coding, I enjoy
+                                listening to Western music and photography,
+                                particularly capturing nature with my
                                 grandfather's cherished DSLR camera.
                             </p>
                         </div>
-                        <button id="toggleBtn" class="btn btn-light">Read More</button>
-
+                        <button id="toggleBtn" class="btn btn-light">
+                            Read More
+                        </button>
                     </div>
-                    <div class="mySkills d-flex flex-column justify-content-center align-items-center">
+                    <div
+                        class="mySkills d-flex flex-column justify-content-center align-items-center"
+                    >
                         <div class="mySkillsText">
                             <h1>My <span class="text-warning">Skills</span></h1>
                         </div>
                         <div class="mySkillsList">
-                            <p class="text-center">I've worked on a variety of projects, including:</p>
-                            <ul class="d-flex flex-row justify-content-center align-items-center">
+                            <p class="text-center">
+                                I've worked on a variety of projects, including:
+                            </p>
+                            <ul
+                                class="d-flex flex-row justify-content-between"
+                                id="mySkillsItems"
+                            >
                                 <li>
-                                    <img src="/assets/icons/htmlIcon.svg" alt="HTML">
+                                    <img
+                                        src="/assets/icons/htmlIcon.svg"
+                                        alt="HTML"
+                                    />
                                 </li>
                                 <li>
-                                    <img src="/assets/icons/cssIcon.svg" alt="CSS">
+                                    <img
+                                        src="/assets/icons/cssIcon.svg"
+                                        alt="CSS"
+                                    />
                                 </li>
                                 <li>
-                                    <img src="/assets/icons/JavaScriptIcon.svg" alt="JavaScript">
+                                    <img
+                                        src="/assets/icons/JavaScriptIcon.svg"
+                                        alt="JavaScript"
+                                    />
                                 </li>
                                 <li>
-                                    <img src="/assets/icons/phpIcon (2).svg" alt="PHP">
+                                    <img
+                                        src="/assets/icons/pythonIcon.svg"
+                                        alt="Python"
+                                    />
                                 </li>
                                 <li>
-                                    <img src="/assets/icons/pythonIcon.svg" alt="Python">
+                                    <img
+                                        src="/assets/Icons/djangoIcon.svg"
+                                        alt="Django"
+                                    />
                                 </li>
                                 <li>
-                                    <img src="/assets/icons/reactIcon.svg" alt="React">
+                                    <img
+                                        src="/assets/icons/reactIcon.svg"
+                                        alt="React"
+                                    />
                                 </li>
                                 <li>
-                                    <img src="/assets/icons/vuejsIcon.svg" alt="Vue">
+                                    <img
+                                        src="/assets/icons/vuejsIcon.svg"
+                                        alt="Vue"
+                                    />
                                 </li>
                                 <li>
-                                    <img src="/assets/icons/mysqlIcon.svg" alt="MySQL">
+                                    <img
+                                        src="/assets/icons/phpIcon (2).svg"
+                                        alt="PHP"
+                                    />
                                 </li>
                                 <li>
-                                    <img src="/assets/Icons/gitIcon.svg" alt="Git">
+                                    <img
+                                        src="/assets/icons/mysqlIcon.svg"
+                                        alt="MySQL"
+                                    />
+                                </li>
+                                <li>
+                                    <img
+                                        src="/assets/Icons/gitIcon.svg"
+                                        alt="Git"
+                                    />
                                 </li>
                             </ul>
                         </div>
