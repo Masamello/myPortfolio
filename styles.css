@@ -23,6 +23,84 @@ a {
     margin: 0;
 }
 
+.mySkillsList {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#mySkillsItems {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.skillItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 80px;
+}
+
+.skillItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.skillItem img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+.skillItem::after {
+    content: attr(title);
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    color: #333;
+}
+
+@media screen and (max-width: 768px) {
+    #mySkillsItems {
+        gap: 15px;
+    }
+    
+    .skillItem {
+        min-width: 70px;
+        padding: 12px;
+    }
+    
+    .skillItem img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #mySkillsItems {
+        gap: 10px;
+    }
+    
+    .skillItem {
+        min-width: 60px;
+        padding: 10px;
+    }
+    
+    .skillItem img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
 /* From Uiverse.io by Bodyhc */
 .checkbox-wrapper-35 .switch {
     display: none;
@@ -47,6 +125,16 @@ a {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    margin: 0;
+    padding: 8px 0;
+}
+
+/* ナビゲーションバー内のスイッチの位置調整 */
+.navbar-nav .nav-item .checkbox-wrapper-35 .switch + label {
+    padding: 0;
+    margin: 0;
+    height: auto;
+    line-height: 1;
 }
 
 .checkbox-wrapper-35 .switch + label::before,
