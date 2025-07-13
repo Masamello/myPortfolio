@@ -15,3 +15,21 @@
         </div>
     </div>
 </div>
+
+<div class="leftPart d-flex flex-column justify-content-center align-items-center text-center">
+                            <div>
+                                <h2>Nihon University, Tokyo</h2>
+                                <p class="text-muted">Apr,2022 - Aug,2024</p>
+                            </div>
+                        </div>
+                        <div class="centerPart d-flex flex-column justify-content-center align-items-center text-center">
+                            <div>
+                                <img src="/assets/Frames/orangeBall.svg" class="orangeBall"/>
+                            </div>
+                        </div>
+                        <div class="rightPart d-flex flex-column justify-content-center align-items-center text-center">
+                            <div>
+                                <h2>Mechanical Engineering</h2>
+                                <p class="text-muted">Mainly studying about physics such as fluid mechanics, heat transfer etc.</p>
+                            </div>
+                        </div>
