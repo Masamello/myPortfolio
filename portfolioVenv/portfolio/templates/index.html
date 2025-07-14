@@ -1,0 +1,467 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>myPortfolio</title>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+            crossorigin="anonymous"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=keyboard_double_arrow_up" />
+    </head>
+    <body>
+        <!-- Header section -->
+        <header id="headerContainer" class="headerContainer p-2">
+            <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between align-items-center">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"
+                        >my<span class="text-warning">Portfolio</span></a
+                    >
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#education">Education</a>                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#projects"
+                                    >Projects</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                            <li class="nav-item d-flex align-items-center">
+                                <div class="checkbox-wrapper-35">
+                                    <input
+                                        value="private"
+                                        name="switch"
+                                        id="switch"
+                                        type="checkbox"
+                                        class="switch"
+                                    />
+                                    <label for="switch">
+                                        <span class="switch-x-text"></span>
+                                        <span class="switch-x-toggletext">
+                                            <span class="switch-x-unchecked"
+                                                ><span
+                                                    class="switch-x-hiddenlabel"
+                                                    >Unchecked: </span
+                                                >EN</span
+                                            >
+                                            <span class="switch-x-checked"
+                                                ><span
+                                                    class="switch-x-hiddenlabel"
+                                                    >Checked: </span
+                                                >JA</span
+                                            >
+                                        </span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main id="mainContainer" class="mainContainer">
+
+            {% comment %} Home Section {% endcomment %}
+
+            <section id="home" class="homeSection">
+                <div class="homeContent card text-bg-dark" style="border: none">
+                    <img
+                        src="{% static 'assets/photos/CollageImage_2 (1).jpg' %}"
+                        class="card-img"
+                        alt="Collage Image"
+                    />
+                    <div
+                        class="homeText d-flex flex-column justify-content-center align-items-center card-img-overlay text-black"
+                    >
+                        <div class="fs-5 text-white">Hi!</div>
+                        <h1 style="font-size: 3rem">
+                            I'm <span class="text-warning">Masahiro</span>
+                        </h1>
+                        <p>
+                            <span class="text-white"
+                                >Web Developer / Mechanical Engineer</span
+                            >
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {% comment %} About Me Section {% endcomment %}
+
+            <section id="about" class="aboutSection bg-light">
+                <div
+                    class="aboutContent d-flex flex-column justify-content-center align-items-center"
+                >
+                    <div
+                        class="aboutText d-flex flex-column justify-content-center align-items-center conatiner p-5"
+                    >
+                        <h1>About <span class="text-warning">Me</span></h1>
+                        <div class="aboutMeDescription d-flex flex-wrap justify-content-center">
+                            {% if about_me_sections %}
+                                {% for section in about_me_sections %}
+                                    <p>{{ section.description|linebreaks }}</p>
+                                {% endfor %}
+                            {% else %}
+                                <p>
+                                    I'm a third-year mechanical engineering student
+                                    currently on a study leave for international
+                                    education. My passion lies in automotive
+                                    engineering, and I'm dedicated to expanding my
+                                    knowledge in both <span class="text-warning">mechanical</span> and <span class="text-warning">web development</span>
+                                    fields!
+                                </p>
+                            {% endif %}
+                            <div id="moretext" class="d-none moreText">
+                                <p>
+                                    Studied at <a href="https://tamwood.com/study-work/">Tamwood Career College</a>,
+                                    I'm pursuing web development while working
+                                    part-time. My curriculum covers both frontend
+                                    and backend development, including
+                                    <strong
+                                        >HTML, CSS, PHP (MySQL), JavaScript (React,
+                                        Vue.js), and Python (Django).</strong
+                                    >
+                                    Through hands-on projects, I'm building a strong
+                                    foundation in full-stack development.
+                                </p>
+                                <p>
+                                    My goal is to work in the automotive industry,
+                                    and I believe the technical skills,
+                                    problem-solving abilities, and international
+                                    experience I'm gaining will be invaluable for my
+                                    future career. When I'm not coding, I enjoy
+                                    listening to Western music and photography,
+                                    particularly capturing nature with my
+                                    grandfather's cherished DSLR camera.
+                                </p>
+                            </div>
+                            <button id="toggleBtn" class="btn btn-light">
+                                Read More
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="mySkills d-flex flex-column justify-content-center align-items-center"
+                    >
+                        <div class="mySkillsText">
+                            <h1>My <span class="text-warning">Skills</span></h1>
+                        </div>
+                        <div class="mySkillsList">
+                            <p class="text-center mb-4">
+                                I've worked on a variety of projects, including:
+                            </p>
+                            <ul id="mySkillsItems" class="d-flex flex-wrap justify-content-center">
+                                {% if skills %}
+                                    {% for skill in skills %}
+                                        <li class="skillItem" {% if skill.github_url %}onclick="window.open('{{ skill.github_url }}', '_blank')"{% endif %}>
+                                            <img src="{% static 'assets/Icons/'|add:skill.icon_file %}" alt="{{ skill.name }}" title="{{ skill.name }}">
+                                        </li>
+                                    {% endfor %}
+                                {% else %}
+                                    <!-- Default skills if no data in database -->
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/htmlIcon.svg' %}" alt="HTML" title="HTML">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/cssIcon.svg' %}" alt="CSS" title="CSS">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/bootstrapIcon.svg' %}" alt="Bootstrap" title="Bootstrap">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/JavaScriptIcon.svg' %}" alt="JavaScript" title="JavaScript">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/pythonIcon.svg' %}" alt="Python" title="Python">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/djangoIcon.svg' %}" alt="Django" title="Django">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/phpIcon (2).svg' %}" alt="PHP" title="PHP">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/mysqlIcon.svg' %}" alt="MySQL" title="MySQL">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/gitIcon.svg' %}" alt="Git" title="Git">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/jQueryIcon.svg' %}" alt="jQuery" title="jQuery">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/vuejsIcon.svg' %}" alt="Vue.js" title="Vue.js">
+                                    </li>
+                                    <li class="skillItem">
+                                        <img src="{% static 'assets/Icons/reactIcon.svg' %}" alt="React" title="React">
+                                    </li>
+                                {% endif %}
+                            </ul>
+                            <p class="text-center mb-4">
+                                Click each skills to see my projects on my GitHub!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {% comment %} Education Section {% endcomment %}
+
+            <section id="education" class="educationSection">
+                <div class="myEducationContent bg-white">
+                    <div
+                        class="myEducationText d-flex flex-column justify-content-center align-items-center m-5"
+                    >
+                        <h1>My <span class="text-warning">Education</span></h1>
+                    </div>
+                    <div class="myEducationList d-flex flex-column justify-content-around align-items-center container">
+                        {% for education in educations %}
+                            <div class="row text-center">
+                                <div class="col d-flex flex-column justify-content-center align-items-center">
+                                    <h2>{{ education.school_name }}</h2>
+                                    <p class="text-muted">{{ education.period }}</p>
+                                </div>
+                                <div class="col d-flex flex-column justify-content-center align-items-center">
+                                    {% if forloop.counter0 == 0 %}
+                                        <img src="{% static 'assets/Frames/yellowBall.svg' %}" class="yellowBall"/>
+                                    {% else %}
+                                        <img src="{% static 'assets/Frames/blackBall.svg' %}" class="blackBall"/>
+                                    {% endif %}
+                                </div>
+                                <div class="col d-flex flex-column justify-content-center align-items-center">
+                                    <h2>{{ education.degree }}</h2>
+                                    <p class="text-muted">{{ education.description }}</p>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <!-- Default education if no data in database -->
+                            <div class="row text-center">
+                                <div class="col d-flex flex-column justify-content-center align-items-center educationColumn">
+                                    <h2>Nihon University, Tokyo</h2>
+                                    <p class="text-muted">Apr,2022 - Aug,2024</p>
+                                </div>
+                                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                                    <img src="{% static 'assets/Frames/yellowBall.svg' %}" class="yellowBall"/>
+                                </div>
+                                <div class="col d-flex flex-column justify-content-center align-items-center educationColumn">
+                                    <h2>Mechanical Engineering</h2>
+                                    <p class="text-muted">Mainly studying about physics such as fluid mechanics, heat transfer etc.</p>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col d-flex flex-column justify-content-center align-items-center educationColumn">
+                                    <h2>Ilac International College, Vancouver</h2>
+                                    <p class="text-muted">Aug,2024 - Dec,2024</p>
+                                </div>
+                                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                                    <img src="{% static 'assets/Frames/blackBall.svg' %}" class="blackBall"/>
+                                </div>
+                                <div class="col d-flex flex-column justify-content-center align-items-center educationColumn">
+                                    <h2>English Language</h2>
+                                    <p class="text-muted">Studied English to improve my communication skills.</p>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col d-flex flex-column justify-content-center align-items-center educationColumn">
+                                    <h2>Tamwood Career College, Vancouver</h2>
+                                    <p class="text-muted">Feb,2025 - Jul,2025</p>
+                                </div>
+                                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                                    <img src="{% static 'assets/Frames/yellowBall.svg' %}" class="yellowBall"/>
+                                </div>
+                                <div class="col d-flex flex-column justify-content-center align-items-center educationColumn">
+                                    <h2>Web Development</h2>
+                                    <p class="text-muted">Studied web development at Vancouver, Canada. Learned basic HTML, CSS, JavaScript, Python, and PHP.</p>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col d-flex flex-column justify-content-center align-items-center educationColumn">
+                                    <h2>Nihon University, Tokyo</h2>
+                                    <p class="text-muted">Sep,2025 - Present</p>
+                                </div>
+                                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                                    <img src="{% static 'assets/Frames/blackBall.svg' %}" class="blackBall"/>
+                                </div>
+                                <div class="col d-flex flex-column justify-content-center align-items-center educationColumn">
+                                    <h2>Mechanical Engineering</h2>
+                                    <p class="text-muted">Going to study about more specific things such as 
+                                        Mechanical Materials, Mechanics of Materials</p>
+                                </div>
+                            </div>
+                        {% endfor %}     
+                    </div>
+                    <div class="resumeDownload d-flex justify-content-center align-items-center pt-3">
+                        <a href="{% static 'assets/files/Masahiro Kojima_ Resume(3) (1).pdf' %}" download>
+                            <button class="btn btn-warning">Download Resume</button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            {% comment %} Project Section {% endcomment %}
+
+            <section id="projects" class="projectsSection">
+                <div class="projectContent bg-light p-5">
+                    <div class="projectContext d-flex flex-row justify-content-around align-items-center">
+                        <div class="d-flex justify-content-start">
+                            <h1>Let's have a look at my <span class="text-warning">Projects</span>!</h1>
+                        </div>
+                        <button class="btn btn-warning projectBtn d-flex justify-content-end" id="projectBtn">See All</button>
+                    </div>
+                    <div class="projectList row d-flex justify-content-center align-items-center mt-3">
+                        {% for project in projects|slice:':2' %}
+                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                <div class="card" style="width: 18rem;">
+                                    {% if project.image %}
+                                        <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }} Image">
+                                    {% else %}
+                                        <img src="{% static 'assets/Imgaes/oldPortfolioImage.png' %}" class="card-img-top" alt="Default Project Image">
+                                    {% endif %}
+                                    <div class="card-body">
+                                      <h5 class="card-title">{{ project.title }}</h5>
+                                      <p class="card-text">{{ project.description }}</p>
+                                      {% if project.github_url %}
+                                          <a href="{{ project.github_url }}" class="btn btn-warning" target="_blank">Go to Repository</a>
+                                      {% else %}
+                                          <a href="#" class="btn btn-warning disabled">No Repository</a>
+                                      {% endif %}
+                                    </div>
+                                  </div>    
+                            </div>
+                        {% empty %}
+                            <!-- Default projects if no data in database -->
+                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="{% static 'assets/Imgaes/expense-tracker-img.png' %}" class="card-img-top" alt="Expense Tracker App Img">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Expense Tracker App</h5>
+                                      <p class="card-text">Expense tracker application that can calculate your expense</p>
+                                      <a href="https://github.com/Masamello/Expense-Tracker" class="btn btn-warning">Go to Repository</a>
+                                    </div>
+                                  </div>    
+                            </div>
+                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="{% static 'assets/Imgaes/oldPortfolioImage.png' %}" class="card-img-top" alt="Portfolio Image">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Portfolio Website</h5>
+                                      <p class="card-text">Personal portfolio responsive website built with html and css</p>
+                                      <a href="https://github.com/Masamello/Module2---Final-Project" class="btn btn-warning">Go to Repository</a>
+                                    </div>
+                                  </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    {% if projects.count > 2 %}
+                        <div id="hiddenList" class="hiddenList d-none row d-flex justify-content-center align-items-center">
+                            {% for project in projects|slice:'2:' %}
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="card" style="width: 18rem;">
+                                        {% if project.image %}
+                                            <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }} Image">
+                                        {% else %}
+                                            <img src="{% static 'assets/Imgaes/oldPortfolioImage.png' %}" class="card-img-top" alt="Default Project Image">
+                                        {% endif %}
+                                        <div class="card-body">
+                                          <h5 class="card-title">{{ project.title }}</h5>
+                                          <p class="card-text">{{ project.description }}</p>
+                                          {% if project.github_url %}
+                                              <a href="{{ project.github_url }}" class="btn btn-warning" target="_blank">Go to Repository</a>
+                                          {% else %}
+                                              <a href="#" class="btn btn-warning disabled">No Repository</a>
+                                          {% endif %}
+                                        </div>
+                                    </div>    
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </section>
+
+            {% comment %} Contanct Me Section {% endcomment %}
+
+            <section id="contact" class="contactSection">
+                <div class="contactContext bg-light p-5">
+                    <div class="contactMe d-flex flex-column justify-content-center align-items-center">
+                        
+                    </div>
+                </div>
+            </section>
+            <a href="#" class="back-to-top">
+                <span class="material-symbols-outlined">
+                    keyboard_double_arrow_up
+                </span>
+            </a>
+        </main>
+
+        {% comment %} Footer Section {% endcomment %}
+
+        <footer id="footerContainer" class="footerContainer">
+            <h3>myPortfolio</h3>
+            <div class="socialMedia">
+                <div>Follow me on</div>
+                <a href="https://x.com/MasamelloIsHere"
+                    ><i class="fa-brands fa-twitter"></i
+                ></a>
+                <a href="https://www.instagram.com/masahiro_kojima/"
+                    ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a href="https://github.com/Masamello"
+                    ><i class="fa-brands fa-github"></i
+                ></a>
+            </div>
+            <div class="navBarFooter">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </footer>
+        <!-- Bootstrap JavaScript Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+    <script src="{% static 'js/script.js' %}"></script>
+</html>
