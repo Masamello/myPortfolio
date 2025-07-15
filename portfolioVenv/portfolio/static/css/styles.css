@@ -61,7 +61,6 @@ a {
     width: 4rem;
     height: 4rem;
     object-fit: contain;
-    margin-bottom: 8px;
 }
 
 .skillItem::after {

@@ -196,40 +196,64 @@
                                 {% else %}
                                     <!-- Default skills if no data in database -->
                                     <li class="skillItem">
-                                        <img src="{% static 'assets/Icons/htmlIcon.svg' %}" alt="HTML" title="HTML">
+                                        <a href="https://github.com/Masamello/Final-Project-1" target="_blank">
+                                            <img src="{% static 'assets/Icons/htmlIcon.svg' %}" alt="HTML" title="HTML">
+                                        </a>
                                     </li>
                                     <li class="skillItem">
-                                        <img src="{% static 'assets/Icons/cssIcon.svg' %}" alt="CSS" title="CSS">
+                                        <a href="https://github.com/Masamello/flexbox-layouts-1" target="_blank">
+                                            <img src="{% static 'assets/Icons/cssIcon.svg' %}" alt="CSS" title="CSS">
+                                        </a>
                                     </li>
                                     <li class="skillItem">
-                                        <img src="{% static 'assets/Icons/bootstrapIcon.svg' %}" alt="Bootstrap" title="Bootstrap">
+                                        <a href="https://github.com/Masamello/bootstrap-website" target="_blank">
+                                            <img src="{% static 'assets/Icons/bootstrapIcon.svg' %}" alt="Bootstrap" title="Bootstrap">
+                                        </a>
                                     </li>
                                     <li class="skillItem">
-                                        <img src="{% static 'assets/Icons/JavaScriptIcon.svg' %}" alt="JavaScript" title="JavaScript">
+                                        <a href="https://github.com/Masamello/Expense-Tracker" target="_blank">
+                                            <img src="{% static 'assets/Icons/JavaScriptIcon.svg' %}" alt="JavaScript" title="JavaScript">
+                                        </a>
                                     </li>
                                     <li class="skillItem">
-                                        <img src="{% static 'assets/Icons/pythonIcon.svg' %}" alt="Python" title="Python">
+                                        <a href="#" target="_blank">
+                                            <img src="{% static 'assets/Icons/pythonIcon.svg' %}" alt="Python" title="Python">
+                                        </a>
                                     </li>
                                     <li class="skillItem">
-                                        <img src="{% static 'assets/Icons/djangoIcon.svg' %}" alt="Django" title="Django">
+                                        <a href="#" target="_blank">
+                                            <img src="{% static 'assets/Icons/djangoIcon.svg' %}" alt="Django" title="Django">
+                                        </a>
                                     </li>
                                     <li class="skillItem">
-                                        <img src="{% static 'assets/Icons/phpIcon (2).svg' %}" alt="PHP" title="PHP">
+                                        <a href="https://github.com/Masamello/cms-food" target="_blank">
+                                            <img src="{% static 'assets/Icons/phpIcon (2).svg' %}" alt="PHP" title="PHP">
+                                        </a>
                                     </li>
                                     <li class="skillItem">
-                                        <img src="{% static 'assets/Icons/mysqlIcon.svg' %}" alt="MySQL" title="MySQL">
+                                        <a href="https://github.com/Masamello/cms-food" target="_blank">
+                                            <img src="{% static 'assets/Icons/mysqlIcon.svg' %}" alt="MySQL" title="MySQL">
+                                        </a>
                                     </li>
                                     <li class="skillItem">
-                                        <img src="{% static 'assets/Icons/gitIcon.svg' %}" alt="Git" title="Git">
+                                        <a href="#" target="_blank">
+                                            <img src="{% static 'assets/Icons/gitIcon.svg' %}" alt="Git" title="Git">
+                                        </a>
                                     </li>
                                     <li class="skillItem">
-                                        <img src="{% static 'assets/Icons/jQueryIcon.svg' %}" alt="jQuery" title="jQuery">
+                                        <a href="#" target="_blank">
+                                            <img src="{% static 'assets/Icons/jQueryIcon.svg' %}" alt="jQuery" title="jQuery">
+                                        </a>
                                     </li>
                                     <li class="skillItem">
-                                        <img src="{% static 'assets/Icons/vuejsIcon.svg' %}" alt="Vue.js" title="Vue.js">
+                                        <a href="https://github.com/Masamello/SPA-FlashcardApp" target="_blank">
+                                            <img src="{% static 'assets/Icons/vuejsIcon.svg' %}" alt="Vue.js" title="Vue.js">
+                                        </a>
                                     </li>
                                     <li class="skillItem">
-                                        <img src="{% static 'assets/Icons/reactIcon.svg' %}" alt="React" title="React">
+                                        <a href="https://github.com/Masamello/SPA-FlashcardApp" target="_blank">
+                                            <img src="{% static 'assets/Icons/reactIcon.svg' %}" alt="React" title="React">
+                                        </a>
                                     </li>
                                 {% endif %}
                             </ul>
@@ -277,7 +301,9 @@
                                     <p class="text-muted">Apr,2022 - Aug,2024</p>
                                 </div>
                                 <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                                    <img src="{% static 'assets/Frames/Line 4.svg' %}" class="line" style="height:1rem;"/>
                                     <img src="{% static 'assets/Frames/yellowBall.svg' %}" class="yellowBall"/>
+                                    <img src="{% static 'assets/Frames/Line 4.svg' %}" class="line" style="height:1rem;"/>
                                 </div>
                                 <div class="col d-flex flex-column justify-content-center align-items-center educationColumn">
                                     <h2>Mechanical Engineering</h2>
@@ -352,7 +378,7 @@
                     </div>
                     <div class="projectList row d-flex justify-content-center align-items-center mt-3">
                         {% for project in projects|slice:':2' %}
-                            <div class="col-6 d-flex justify-content-center align-items-center">
+                            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center align-items-center">
                                 <div class="card" style="width: 18rem;">
                                     {% if project.image %}
                                         <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }} Image">
@@ -372,7 +398,7 @@
                             </div>
                         {% empty %}
                             <!-- Default projects if no data in database -->
-                            <div class="col-6 d-flex justify-content-center align-items-center">
+                            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center align-items-center">
                                 <div class="card" style="width: 18rem;">
                                     <img src="{% static 'assets/Imgaes/expense-tracker-img.png' %}" class="card-img-top" alt="Expense Tracker App Img">
                                     <div class="card-body">
@@ -382,7 +408,7 @@
                                     </div>
                                   </div>    
                             </div>
-                            <div class="col-6 d-flex justify-content-center align-items-center">
+                            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center align-items-center">
                                 <div class="card" style="width: 18rem;">
                                     <img src="{% static 'assets/Imgaes/oldPortfolioImage.png' %}" class="card-img-top" alt="Portfolio Image">
                                     <div class="card-body">
@@ -397,7 +423,7 @@
                     {% if projects.count > 2 %}
                         <div id="hiddenList" class="hiddenList d-none row d-flex justify-content-center align-items-center">
                             {% for project in projects|slice:'2:' %}
-                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center align-items-center">
                                     <div class="card" style="width: 18rem;">
                                         {% if project.image %}
                                             <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }} Image">
@@ -431,51 +457,60 @@
         {% comment %} Footer Section {% endcomment %}
 
         <footer id="footerContainer" class="footerContainer">
-            <div class="d-flex flex-row justify-content-evenly align-items-center bg-white p-5">
-                <div class="contactFormDiv">
-                    <div id="contact" class="contactContext">
-                        <div class="contactMe d-flex flex-column justify-content-center align-items-center">
-                            <h1>Let's Connect <span class="text-warning">Here</span>!</h1>
+            <div class="d-flex flex-column justify-content-evenly align-items-center bg-white p-5">
+                <h1>Let's Connect <span class="text-warning">Here</span>!</h1>
+                <hr>
+                <div class="contactContext d-flex flex-lg-row flex-column justify-content-between align-items-center">
+                    <div class="myDescription d-flex flex-column justify-content-center align-items-center col">
+                        <div class="d-flex flex-row justify-content-start align-items-center text-center">
+                            <img src="{% static "assets/photos/IMG_0591 (1).png" %}" alt="mySelfie" style="max-width: 4rem; max-height:4rem; border-radius:45%;">
+                            <p class="fs-3 text-warning" style="margin-bottom:0;">Masahiro<p>
+                        </div>
+                        <p class="text-break w-100" style="min-width:0;">Born in Tokyo,Japan Aug,20th,2003. Loves cars, music and traveling. A man of action. Have already traveled abroad to five different countries.</p>
+                    </div>
+                    <div class="contactNavigation d-flex flex-row justify-content-around align-items-center col">
+                        <div>
+                            <h4>Contact <span class="text-warning">Me</span></h4>
                             <form class="contactForm">
                                 <div class="mb-3">
                                     <label for="nameInput" class="form-label">Name</label>
                                     <input type="text" class="form-control" id="nameInput" aria-describedby="inputHelp" placeholder="Enter Your Name"/>
                                 </div>
                                 <div class="mb-3">
-                                  <label for="emailInput" class="form-label">Email address</label>
-                                  <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter Your Email">
+                                    <label for="emailInput" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter Your Email">
                                 </div>
                                 <div class="form-floating mb-3">
                                     <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 5rem"></textarea>
                                     <label for="floatingTextarea2">Leave messages here</label>
                                 </div>                                
                                 <button type="submit" class="btn btn-primary">Submit</button>
-                              </form>
+                            </form>
                         </div>
-                    </div>
-                </div>
-                <div class="navigationDiv">
-                    <h3>my<span class="text-warning">Portfolio<span></h3>
-                    <div class="socialMedia">
-                        <div>Follow me on</div>
-                        <a href="https://x.com/MasamelloIsHere"
-                            ><i class="fa-brands fa-twitter"></i
-                        ></a>
-                        <a href="https://www.instagram.com/masahiro_kojima/"
-                            ><i class="fa-brands fa-instagram"></i
-                        ></a>
-                        <a href="https://github.com/Masamello"
-                            ><i class="fa-brands fa-github"></i
-                        ></a>
-                    </div>
-                    <div class="navBarFooter">
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#education">Education</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
+                        <div class="navigationDiv">
+                            <h3>my<span class="text-warning">Portfolio<span></h3>
+                            <div class="socialMedia">
+                                <div>Follow me on</div>
+                                <a href="https://x.com/MasamelloIsHere"
+                                    ><i class="fa-brands fa-twitter"></i
+                                ></a>
+                                <a href="https://www.instagram.com/masahiro_kojima/"
+                                    ><i class="fa-brands fa-instagram"></i
+                                ></a>
+                                <a href="https://github.com/Masamello"
+                                    ><i class="fa-brands fa-github"></i
+                                ></a>
+                            </div>
+                            <div class="navBarFooter">
+                                <ul>
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#about">About</a></li>
+                                    <li><a href="#education">Education</a></li>
+                                    <li><a href="#projects">Projects</a></li>
+                                    <li><a href="#contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
