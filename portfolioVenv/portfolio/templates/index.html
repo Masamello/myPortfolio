@@ -57,6 +57,9 @@
                                 <a class="nav-link" href="#education">Education</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="#experience">Experience</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="#projects"
                                     >Projects</a
                                 >
@@ -354,6 +357,78 @@
                             </div>
                         {% endfor %}     
                     </div>
+                </div>
+            </section>
+            
+            <section id="experience" class="experienceSection">
+                <div class="myExperienceContent bg-light">
+                    <div
+                        class="myExperienceContext d-flex flex-column justify-content-center align-items-center m-5"
+                    >
+                        <h1>My <span class="text-warning">Experience</span></h1>
+                    </div>
+                    <div class="myExperienceList d-flex flex-column justify-content-around align-items-center container">
+                        {% for experience in experiences %}
+                            <div class="row text-center">
+                                <div class="col d-flex flex-column justify-content-center align-items-center">
+                                    <h2 class="workPlaceName">{{ experience.workplace_name }}</h2>
+                                    <p class="text-muted experiencePeriod">{{ experience.period }}</p>
+                                </div>
+                                <div class="col d-flex flex-column justify-content-center align-items-center">
+                                    {% if forloop.counter0 == 0 %}
+                                        <img src="{% static 'assets/Frames/yellowBall.svg' %}" class="yellowBall"/>
+                                    {% else %}
+                                            <img src="{% static 'assets/Frames/blackBall.svg' %}" class="blackBall"/>
+                                    {% endif %}
+                                </div>
+                                <div class="col d-flex flex-column justify-content-center align-items-center">
+                                    <h2 class="experiencePosition">{{ experience.position }}</h2>
+                                    <p class="text-muted experienceDescription">{{ experience.description }}</p>
+                                </div>
+                            </div>
+                        {% empty %}
+                        <!-- Default experience if no data in database -->
+                        <div class="row text-center">
+                            <div class="col d-flex flex-column justify-content-center align-items-center educationColumn text-break">
+                                <h2 class="workPlaceName">Maruetsu Supermarket,Tokyo</h2>
+                                <p class="text-muted experiencePeriod">Mar,2022 - May,2023</p>
+                            </div>
+                            <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                                <img src="{% static 'assets/Frames/yellowBall.svg' %}" class="yellowBall"/>
+                            </div>
+                            <div class="col d-flex flex-column justify-content-center align-items-center educationColumn text-break">
+                                <h2 class="experiencePosition">Cashier</h2>
+                                <p class="text-muted experienceDescription">Post-closing rounds,replenishment of goods,Quick and accurate checkout</p>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col d-flex flex-column justify-content-center align-items-center educationColumn text-break">
+                                <h2 class="workPlaceName">Hotel Hillarys Akasaka,Tokyo</h2>
+                                <p class="text-muted experiencePeriod">Jun,2023 - Aug,2024</p>
+                            </div>
+                            <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                                <img src="{% static 'assets/Frames/blackBall.svg' %}" class="blackBall"/>
+                            </div>
+                            <div class="col d-flex flex-column justify-content-center align-items-center educationColumn text-break">
+                                <h2 class="experiencePosition">Receptionist</h2>
+                                <p class="text-muted experienceDescription">Confirmation of guest reservation and check-in. Answering phone and troubleshooting.</p>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col d-flex flex-column justify-content-center align-items-center educationColumn text-break">
+                                <h2 class="workPlaceName">Senshaya Hand car wash,Vancouver</h2>
+                                <p class="text-muted experiencePeriod">Feb,2025 - Jun,2025</p>
+                            </div>
+                            <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                                <img src="{% static 'assets/Frames/yellowBall.svg' %}" class="yellowBall"/>
+                            </div>
+                            <div class="col d-flex flex-column justify-content-center align-items-center educationColumn text-break">
+                                <h2 class="experiencePosition">Car Washer</h2>
+                                <p class="text-muted experienceDescription">Quick and careful car wash. Pleasant greeting of customers when entering the store.</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
                     <div class="resumeDownload d-flex justify-content-center align-items-center pt-3">
                         <a href="{% static 'assets/files/Masahiro Kojima_ Resume(3) (1).pdf' %}" download>
                             <button class="btn btn-warning">Download Resume</button>
@@ -371,7 +446,7 @@
             {% comment %} Project Section {% endcomment %}
 
             <section id="projects" class="projectsSection">
-                <div class="projectContent bg-light p-5">
+                <div class="projectContent bg-white p-5">
                     <div class="projectContext d-flex flex-row justify-content-around align-items-center">
                         <div class="d-flex justify-content-start">
                             <h1>Let's have a look at my <span class="text-warning">Projects</span>!</h1>
@@ -448,7 +523,10 @@
                     {% endif %}
                 </div>
             </section>
-            <section id="portfolio" class="portfolioSection">
+            <section id="portfolio" class="portfolioSection bg-light">
+                <div class="d-flex justify-content-center align-items-center">
+                    <h1>I am <span class="text-warning">into...</span></h1>
+                </div>
                 <div class="slideShowContainer">
                     <div id="container"></div>
                     <a class="prev">❮</a>
@@ -515,6 +593,7 @@
                                     <li><a href="#home">Home</a></li>
                                     <li><a href="#about">About</a></li>
                                     <li><a href="#education">Education</a></li>
+                                    <li><a href="#experience">Experience</a></li>
                                     <li><a href="#projects">Projects</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>

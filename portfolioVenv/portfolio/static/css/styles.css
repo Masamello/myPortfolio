@@ -489,10 +489,10 @@ a {
 }
 
 @media screen and (max-width: 420px) {
-    .educationDegree, .educationSchoolName{
+    .educationDegree, .educationSchoolName, .experiencePosition, .workPlaceName{
         font-size:1.2rem;
     }
-    .educationDescription{
+    .educationDescription, .experienceDescription{
         font-size: small;
     }
 }

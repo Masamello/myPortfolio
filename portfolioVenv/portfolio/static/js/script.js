@@ -36,7 +36,7 @@ const loadPictures = (resolve,reject)=>{
             reject(xhr.statusText);
         }
     }
-    xhr.open("GET","assets/Json/ImageJson.json");
+    xhr.open("GET","/static/assets/Json/ImageJson.json");
     xhr.send();
 }
 
@@ -47,7 +47,7 @@ const imgBlockCreator = (imgObj,idx,total) =>{
     const img = $("<img style='width:100%'/>");
     img.attr("src",imgObj.img);
     const caption = $(`<div class="text">${imgObj.img_caption}</div>`);
-    mySlidesDiv.append(numbertext,img,caption);
+    mySlidesDiv.append(img,caption);
     return mySlidesDiv;
     // <div class="mySlides fade">
     //     <div class="numbertext">1 / 3</div>
