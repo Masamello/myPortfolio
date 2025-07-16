@@ -103,7 +103,7 @@
                 <div class="homeContent card text-bg-dark" style="border: none">
                     <img
                         src="{% static 'assets/photos/CollageImage_2 (1).jpg' %}"
-                        class="card-img"
+                        class="card-img collageImg"
                         alt="Collage Image"
                     />
                     <div
@@ -379,7 +379,7 @@
                     <div class="projectList row d-flex justify-content-center align-items-center mt-3">
                         {% for project in projects|slice:':2' %}
                             <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center align-items-center">
-                                <div class="card" style="width: 18rem;">
+                                <div class="card projectCard" style="width: 18rem;">
                                     {% if project.image %}
                                         <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }} Image">
                                     {% else %}
@@ -463,12 +463,12 @@
                 <div class="contactContext d-flex flex-lg-row flex-column justify-content-between align-items-center">
                     <div class="myDescription d-flex flex-column justify-content-center align-items-center col">
                         <div class="d-flex flex-row justify-content-start align-items-center text-center">
-                            <img src="{% static "assets/photos/IMG_0591 (1).png" %}" alt="mySelfie" style="max-width: 4rem; max-height:4rem; border-radius:45%;">
+                            <img src="{% static "assets/photos/IMG_0591 (1).png" %}" alt="mySelfie" class="bg-white" style="max-width: 4rem; max-height:4rem; border-radius:50%;">
                             <p class="fs-3 text-warning" style="margin-bottom:0;">Masahiro<p>
                         </div>
                         <p class="text-break w-100" style="min-width:0;">Born in Tokyo,Japan Aug,20th,2003. Loves cars, music and traveling. A man of action. Have already traveled abroad to five different countries.</p>
                     </div>
-                    <div class="contactNavigation d-flex flex-row justify-content-around align-items-center col">
+                    <div class="contactNavigation d-flex flex-column flex-sm-row justify-content-around align-items-center col">
                         <div>
                             <h4>Contact <span class="text-warning">Me</span></h4>
                             <form class="contactForm" action="{% static 'php/main.php' %}" method="POST">

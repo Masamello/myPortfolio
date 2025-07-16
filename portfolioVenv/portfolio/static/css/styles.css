@@ -271,15 +271,31 @@ a {
 }
 
 /* Footer Styles */
-.footerContainer {
+ .footerContainer {
+    background: #111;
     border-top: 2px solid #ffc107;
+    color: #fff;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }
-
+/*  */
+.footerContainer h1,
+.footerContainer h3,
+.footerContainer h4,
+.footerContainer p,
+.footerContainer label {
+    color: #fff;
+}
+/*  */
+.footerContainer > div {
+    background: #111 !important;
+}
+/*  */
 .navigationDiv {
-    background: #f8f9fa;
+    background: transparent;
     border-radius: 8px;
     padding: 1.5rem;
-    border: 1px solid #e9ecef;
+    border: none;
 }
 
 .socialMedia {
@@ -288,8 +304,7 @@ a {
 }
 
 .socialMedia div {
-    font-weight: 500;
-    color: #6c757d;
+    color: #ccc;
     margin-bottom: 0.8rem;
     font-size: 0.9rem;
 }
@@ -298,8 +313,9 @@ a {
     display: inline-block;
     margin: 0 0.5rem;
     font-size: 1.8rem;
-    color: #495057;
-    transition: color 0.3s ease;
+    color: #fff;
+    background: none;
+    transition: color 0.3s;
     padding: 0.3rem;
 }
 
@@ -325,35 +341,40 @@ a {
 }
 
 .navBarFooter a {
-    color: #495057;
-    font-weight: 500;
+    color: #fff;
+    background: none;
     text-decoration: none;
     padding: 0.3rem 0.8rem;
     border-radius: 4px;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 .navBarFooter a:hover {
     color: #ffc107;
+    background: none;
 }
 
 /* Contact and Description Styles */
+/*  */
 .myDescription {
-    background: #f8f9fa;
+    background: rgba(255,255,255,0.03);
     border-radius: 8px;
     padding: 1.5rem;
-    border: 1px solid #e9ecef;
+    border: 1px solid #222;
+    color: #fff;
 }
 
 .contactForm {
-    background: #f8f9fa;
+    background: rgba(255,255,255,0.03);
     border-radius: 8px;
     padding: 1.5rem;
-    border: 1px solid #e9ecef;
+    border: 1px solid #222;
 }
 
 .contactForm .form-control {
-    border: 1px solid #e9ecef;
+    background: #222;
+    color: #fff;
+    border: 1px solid #444;
     border-radius: 4px;
     transition: border-color 0.3s ease;
 }
@@ -361,12 +382,14 @@ a {
 .contactForm .form-control:focus {
     border-color: #ffc107;
     box-shadow: 0 0 0 0.1rem rgba(255, 193, 7, 0.25);
+    background: #222;
+    color: #fff;
 }
 
 .contactForm .btn-primary {
     background-color: #ffc107;
     border-color: #ffc107;
-    color: #000;
+    color: #111;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
@@ -374,6 +397,7 @@ a {
 .contactForm .btn-primary:hover {
     background-color: #e0a800;
     border-color: #e0a800;
+    color: #111;
 }
 
 @media screen and (min-width: 960px) {
@@ -385,3 +409,21 @@ a {
 @media screen and (min-width: 420px) {
     
 }
+
+.card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.projectCard {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} 
+
+
