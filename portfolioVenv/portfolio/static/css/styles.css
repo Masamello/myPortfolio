@@ -270,6 +270,112 @@ a {
     color: #ffc107;
 }
 
+/* Footer Styles */
+.footerContainer {
+    border-top: 2px solid #ffc107;
+}
+
+.navigationDiv {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+}
+
+.socialMedia {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.socialMedia div {
+    font-weight: 500;
+    color: #6c757d;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.socialMedia a {
+    display: inline-block;
+    margin: 0 0.5rem;
+    font-size: 1.8rem;
+    color: #495057;
+    transition: color 0.3s ease;
+    padding: 0.3rem;
+}
+
+.socialMedia a:hover {
+    color: #ffc107;
+}
+
+.navBarFooter {
+    margin-top: 1rem;
+}
+
+.navBarFooter ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navBarFooter li {
+    list-style: none;
+}
+
+.navBarFooter a {
+    color: #495057;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    transition: color 0.3s ease;
+}
+
+.navBarFooter a:hover {
+    color: #ffc107;
+}
+
+/* Contact and Description Styles */
+.myDescription {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+}
+
+.contactForm {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+}
+
+.contactForm .form-control {
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.contactForm .form-control:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 0 0.1rem rgba(255, 193, 7, 0.25);
+}
+
+.contactForm .btn-primary {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #000;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.contactForm .btn-primary:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
+}
+
 @media screen and (min-width: 960px) {
 }
 

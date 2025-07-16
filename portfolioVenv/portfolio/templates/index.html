@@ -471,17 +471,17 @@
                     <div class="contactNavigation d-flex flex-row justify-content-around align-items-center col">
                         <div>
                             <h4>Contact <span class="text-warning">Me</span></h4>
-                            <form class="contactForm">
+                            <form class="contactForm" action="{% static 'php/main.php' %}" method="POST">
                                 <div class="mb-3">
                                     <label for="nameInput" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="nameInput" aria-describedby="inputHelp" placeholder="Enter Your Name"/>
+                                    <input type="text" class="form-control" name="name" id="nameInput" aria-describedby="inputHelp" placeholder="Enter Your Name" required/>
                                 </div>
                                 <div class="mb-3">
                                     <label for="emailInput" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter Your Email">
+                                    <input type="email" class="form-control" name="email" id="emailInput" aria-describedby="emailHelp" placeholder="Enter Your Email" required>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 5rem"></textarea>
+                                    <textarea class="form-control" name="message" placeholder="Leave a comment here" id="floatingTextarea2" required style="height: 5rem"></textarea>
                                     <label for="floatingTextarea2">Leave messages here</label>
                                 </div>                                
                                 <button type="submit" class="btn btn-primary">Submit</button>
