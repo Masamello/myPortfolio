@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import AboutMe, Education, Skill, Projects
+from .models import AboutMe, Education, Experience, Skill, Projects
 
 @admin.register(AboutMe)
 class AboutMeAdmin(admin.ModelAdmin):
@@ -14,6 +14,13 @@ class EducationAdmin(admin.ModelAdmin):
     list_display = ['school_name', 'degree', 'period', 'order']
     list_editable = ['order']
     search_fields = ['school_name', 'degree', 'description']
+    list_filter = ['period']
+
+@admin.register(Experience)
+class ExperienceAdmin(admin.ModelAdmin):
+    list_display = ['workplace_name', 'position', 'period', 'order']
+    list_editable = ['order']
+    search_fields = ['workplace_name', 'position', 'description']
     list_filter = ['period']
 
 @admin.register(Skill)
