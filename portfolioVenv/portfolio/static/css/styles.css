@@ -357,8 +357,7 @@ a {
     background: #111;
     border-top: 2px solid #ffc107;
     color: #fff;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-top: 1.5rem;
 }
 /*  */
 .footerContainer h1,
@@ -439,18 +438,14 @@ a {
 /* Contact and Description Styles */
 /*  */
 .myDescription {
-    background: rgba(255,255,255,0.03);
     border-radius: 8px;
     padding: 1.5rem;
-    border: 1px solid #222;
     color: #fff;
 }
 
 .contactForm {
-    background: rgba(255,255,255,0.03);
     border-radius: 8px;
     padding: 1.5rem;
-    border: 1px solid #222;
 }
 
 .contactForm .form-control {
