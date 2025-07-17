@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import AboutMe, Education, Experience, Skill, Projects
+from .models import AboutMe, Education, Experience, Contact, Skill, Projects
 
 @admin.register(AboutMe)
 class AboutMeAdmin(admin.ModelAdmin):
@@ -22,6 +22,15 @@ class ExperienceAdmin(admin.ModelAdmin):
     list_editable = ['order']
     search_fields = ['workplace_name', 'position', 'description']
     list_filter = ['period']
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ['name', 'email', 'created_at', 'is_read']
+    list_editable = ['is_read']
+    readonly_fields = ['created_at']
+    search_fields = ['name', 'email', 'message']
+    list_filter = ['is_read', 'created_at']
+    ordering = ['-created_at']
 
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):

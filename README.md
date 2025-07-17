@@ -239,3 +239,27 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Note**: This portfolio is actively maintained and updated. For the latest version and features, please check the repository.
+
+print("=== FORM SUBMITTED ===")  # Debug print
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        
+        print(f"Name: {name}")  # Debug print
+        print(f"Email: {email}")  # Debug print
+        print(f"Message: {message}")  # Debug print
+        
+        if name and email and message:
+            print("=== SAVING TO DATABASE ===")  # Debug print
+            # Save to database
+            contact = Contact.objects.create(
+                name=name,
+                email=email,
+                message=message
+            )
+            print(f"Contact saved with ID: {contact.id}")  # Debug print
+            
+            # Send email
+            print("=== ATTEMPTING TO SEND EMAIL ===")  # Debug print
+            try:
+                print(f"Email backend: {settings.EMAIL_BACKEND}")  # Debug print

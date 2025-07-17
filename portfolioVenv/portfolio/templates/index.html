@@ -558,7 +558,8 @@
                     <div class="contactNavigation d-flex flex-column flex-sm-row justify-content-around align-items-center col">
                         <div>
                             <h3>Contact <span class="text-warning">Me</span></h3>
-                            <form class="contactForm" action="{% static 'php/main.php' %}" method="POST">
+                            <form class="contactForm" method="POST" action="/">
+                                {% csrf_token %}
                                 <div class="mb-3">
                                     <label for="nameInput" class="form-label">Name</label>
                                     <input type="text" class="form-control" name="name" id="nameInput" aria-describedby="inputHelp" placeholder="Enter Your Name" required/>
@@ -571,7 +572,7 @@
                                     <textarea class="form-control" name="message" placeholder="Leave a comment here" id="floatingTextarea2" required style="height: 5rem"></textarea>
                                     <label for="floatingTextarea2">Leave messages here</label>
                                 </div>                                
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" id="contactSubmitBtn" class="btn btn-primary contactSubmitBtn">Submit</button>
                             </form>
                         </div>
                         <div class="navigationDiv">
