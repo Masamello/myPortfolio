@@ -144,5 +144,5 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')  # Replace with your Gmail
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')  # Replace with your app password
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL','kojimasa1205@gmail.com')  # Replace with your Gmail
 
-ALLOWED_HOSTS = ['Masamello.pythonanywhere.com']
+ALLOWED_HOSTS = ['Masamello.pythonanywhere.com','127.0.0.1','localhost']
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')

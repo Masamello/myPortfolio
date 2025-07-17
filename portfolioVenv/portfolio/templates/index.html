@@ -286,8 +286,8 @@
                                     <h2 class="educationSchoolName">{{ education.school_name }}</h2>
                                     <p class="text-muted educationPeriod">{{ education.period }}</p>
                                 </div>
-                                <div class="col d-flex flex-column justify-content-center align-items-center">
-                                    {% if forloop.counter0 == 0 %}
+                                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                                    {% if forloop.counter0|divisibleby:2 %}
                                         <img src="{% static 'assets/Frames/yellowBall.svg' %}" class="yellowBall"/>
                                     {% else %}
                                         <img src="{% static 'assets/Frames/blackBall.svg' %}" class="blackBall"/>
@@ -371,19 +371,19 @@
                         {% for experience in experiences %}
                             <div class="row text-center">
                                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                                    <h2 class="workPlaceName">{{ experience.workplace_name }}</h2>
-                                    <p class="text-muted experiencePeriod">{{ experience.period }}</p>
+                                    <h2 class="workPlaceName text-break">{{ experience.workplace_name }}</h2>
+                                    <p class="text-muted text-break experiencePeriod">{{ experience.period }}</p>
                                 </div>
-                                <div class="col d-flex flex-column justify-content-center align-items-center">
-                                    {% if forloop.counter0 == 0 %}
+                                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                                    {% if forloop.counter0|divisibleby:2 %}
                                         <img src="{% static 'assets/Frames/yellowBall.svg' %}" class="yellowBall"/>
                                     {% else %}
-                                            <img src="{% static 'assets/Frames/blackBall.svg' %}" class="blackBall"/>
+                                        <img src="{% static 'assets/Frames/blackBall.svg' %}" class="blackBall"/>
                                     {% endif %}
                                 </div>
                                 <div class="col d-flex flex-column justify-content-center align-items-center">
-                                    <h2 class="experiencePosition">{{ experience.position }}</h2>
-                                    <p class="text-muted experienceDescription">{{ experience.description }}</p>
+                                    <h2 class="experiencePosition text-break">{{ experience.position }}</h2>
+                                    <p class="text-muted text-break experienceDescription">{{ experience.description }}</p>
                                 </div>
                             </div>
                         {% empty %}
