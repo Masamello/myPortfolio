@@ -115,7 +115,6 @@ python manage.py runserver
 
 ### 8. Access the Application
 - **Website**: http://127.0.0.1:8000/
-- **Admin Panel**: http://127.0.0.1:8000/admin/
 
 ## 📁 Project Structure
 
