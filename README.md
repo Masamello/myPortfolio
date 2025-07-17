@@ -19,7 +19,7 @@ A dynamic, responsive personal portfolio website built with Django that showcase
 - **Smooth Scrolling**: Navigation with smooth scroll animations
 - **Dynamic Content**: Admin panel for easy content updates
 - **Photo Slideshow**: jQuery-powered image carousel with navigation
-- **Contact Form**: PHP-based email submission system
+- **Contact Form**: Django-based email submission system
 - **Language Toggle**: English/Japanese language switch (UI ready)
 - **Back to Top**: Smooth scroll-to-top functionality
 
@@ -51,7 +51,6 @@ A dynamic, responsive personal portfolio website built with Django that showcase
 
 ### External Services
 - **Cloudinary**: Image hosting and optimization
-- **PHP**: Contact form processing
 
 ### Development Tools
 - **Git**: Version control
@@ -141,8 +140,6 @@ myPortfolio/
 │       │   │   ├── Icons/          # Skill icons
 │       │   │   ├── photos/         # Personal photos
 │       │   │   └── files/          # Resume and documents
-│       │   └── php/
-│       │       └── main.php        # Contact form handler
 │       └── media/                  # User uploaded files
 └── README.md
 ```
@@ -164,7 +161,6 @@ The portfolio uses Django's admin interface to manage all content dynamically:
 - **Navigation**: Arrow controls and dot indicators
 
 ### Contact Form
-- **PHP Processing**: Server-side email handling
 - **Validation**: Client and server-side validation
 - **User Feedback**: Success/error messages
 
