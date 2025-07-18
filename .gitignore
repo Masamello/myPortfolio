@@ -256,6 +256,6 @@ local/
 *.crt
 *.p12
 *.pfx
-porttfoliovenv/portfolio/myportfolio/settings.py
+portfoliovenv/portfolio/myportfolio/settings.py
 # Custom project specific
 # Add any project-specific files or directories here 
