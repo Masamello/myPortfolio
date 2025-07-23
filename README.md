@@ -221,7 +221,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Masahiro Kojima**
 - GitHub: [@Masamello](https://github.com/Masamello)
-- LinkedIn: [Masahiro Kojima](https://linkedin.com/in/masahiro-kojima)
 
 ## 🙏 Acknowledgments
 
